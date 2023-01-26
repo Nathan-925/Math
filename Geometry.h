@@ -17,6 +17,22 @@ namespace priori{
 
 		Point();
 		Point(double x, double y);
+
+		Point operator+(const Point &other);
+		Point operator-(const Point &other);
+		Point operator*(const Point &other);
+		Point operator/(const Point &other);
+
+		Point operator+=(const Point &other);
+		Point operator-=(const Point &other);
+		Point operator*=(const Point &other);
+		Point operator/=(const Point &other);
+
+		Point operator*(const double &d);
+		Point operator/(const double &d);
+
+		Point operator*=(const double &d);
+		Point operator/=(const double &d);
 	};
 
 	typedef std::forward_list<Point> Polygon;

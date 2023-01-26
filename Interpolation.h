@@ -16,8 +16,6 @@ namespace priori{
 		int size = abs(i1-i0);
 		T* arr = new T[size+1];
 		T slope = (d1-d0)/(i1-i0);
-		if(i1 < i0)
-			slope *= -1;
 		T val = d0;
 		for(int i = 0; i < size; i++){
 			arr[i] = val;
@@ -25,6 +23,11 @@ namespace priori{
 		}
 		arr[size] = d1;
 		return arr;
+	}
+
+	template <class T>
+	T lerp(double d, T t1, T t2){
+		return t1*(1-d)+t2*d;
 	}
 }
 
