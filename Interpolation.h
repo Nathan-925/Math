@@ -15,11 +15,11 @@ namespace priori{
 	template <class T>
 	std::forward_list<T> lerp(int i0, T d0, int i1, T d1){
 		std::forward_list<T> list;
-		T slope = (d0-d1)/(i0-i1);
+		T slope = (d1-d0)/(i1-i0);
 		T val = d1;
-		for(int i = 0; i < i1-i0; i++){
+		for(int i = 0; i < std::abs(i1-i0); i++){
 			list.push_front(val);
-			val += slope;
+			val -= slope;
 		}
 		list.push_front(d0);
 		return list;
