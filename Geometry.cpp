@@ -8,7 +8,7 @@
 
 namespace priori{
 
-	Point::Point() : x(), y() {};
+	Point::Point() : x(0), y(0) {};
 
 	Point::Point(double x, double y) : x(x), y(y) {};
 
@@ -29,26 +29,22 @@ namespace priori{
 	}
 
 	Point Point::operator+=(const Point &other){
-		x += other.x;
-		y += other.y;
+		*this = *this+other;
 		return *this;
 	}
 
 	Point Point::operator-=(const Point &other){
-		x -= other.x;
-		y -= other.y;
+		*this = *this-other;
 		return *this;
 	}
 
 	Point Point::operator*=(const Point &other){
-		x *= other.x;
-		y *= other.y;
+		*this = *this*other;
 		return *this;
 	}
 
 	Point Point::operator/=(const Point &other){
-		x /= other.x;
-		y /= other.y;
+		*this = *this/other;
 		return *this;
 	}
 
@@ -61,14 +57,12 @@ namespace priori{
 	}
 
 	Point Point::operator*=(const double &d){
-		x *= d;
-		y *= d;
+		*this = *this*d;
 		return *this;
 	}
 
 	Point Point::operator/=(const double &d){
-		x /= d;
-		y /= d;
+		*this = *this/d;
 		return *this;
 	}
 

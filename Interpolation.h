@@ -27,7 +27,7 @@ namespace priori{
 
 	template <class T>
 	T lerp(double d, T t1, T t2){
-		return t1*(1-d)+t2*d;
+		return t1+(t2-t1)*d;
 	}
 }
 
