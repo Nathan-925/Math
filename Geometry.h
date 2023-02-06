@@ -20,13 +20,9 @@ namespace priori{
 
 		Point operator+(const Point &other);
 		Point operator-(const Point &other);
-		Point operator*(const Point &other);
-		Point operator/(const Point &other);
 
 		Point operator+=(const Point &other);
 		Point operator-=(const Point &other);
-		Point operator*=(const Point &other);
-		Point operator/=(const Point &other);
 
 		Point operator*(const double &d);
 		Point operator/(const double &d);

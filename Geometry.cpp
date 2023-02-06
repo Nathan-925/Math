@@ -20,14 +20,6 @@ namespace priori{
 		return Point(x-other.x, y-other.y);
 	}
 
-	Point Point::operator*(const Point &other){
-		return Point(x*other.x, y*other.y);
-	}
-
-	Point Point::operator/(const Point &other){
-		return Point(x/other.x, y/other.y);
-	}
-
 	Point Point::operator+=(const Point &other){
 		*this = *this+other;
 		return *this;
@@ -35,16 +27,6 @@ namespace priori{
 
 	Point Point::operator-=(const Point &other){
 		*this = *this-other;
-		return *this;
-	}
-
-	Point Point::operator*=(const Point &other){
-		*this = *this*other;
-		return *this;
-	}
-
-	Point Point::operator/=(const Point &other){
-		*this = *this/other;
 		return *this;
 	}
 
