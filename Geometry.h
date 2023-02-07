@@ -12,23 +12,27 @@
 
 namespace priori{
 
-	struct Point{
+	struct Vector{
 		double x, y;
 
-		Point();
-		Point(double x, double y);
+		Vector();
+		Vector(double x, double y);
 
-		Point operator+(const Point &other);
-		Point operator-(const Point &other);
+		Vector operator+(const Vector &other);
+		Vector operator-(const Vector &other);
 
-		Point operator+=(const Point &other);
-		Point operator-=(const Point &other);
+		Vector operator+=(const Vector &other);
+		Vector operator-=(const Vector &other);
 
-		Point operator*(const double &d);
-		Point operator/(const double &d);
+		Vector operator*(const double &d);
+		Vector operator/(const double &d);
 
-		Point operator*=(const double &d);
-		Point operator/=(const double &d);
+		Vector operator*=(const double &d);
+		Vector operator/=(const double &d);
+	};
+
+	struct Point : public Vector{
+
 	};
 
 	typedef std::forward_list<Point> Polygon;

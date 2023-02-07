@@ -8,42 +8,42 @@
 
 namespace priori{
 
-	Point::Point() : x(0), y(0) {};
+	Vector::Vector() : x(0), y(0) {};
 
-	Point::Point(double x, double y) : x(x), y(y) {};
+	Vector::Vector(double x, double y) : x(x), y(y) {};
 
-	Point Point::operator+(const Point &other){
-		return Point(x+other.x, y+other.y);
+	Vector Vector::operator+(const Vector &other){
+		return Vector(x+other.x, y+other.y);
 	}
 
-	Point Point::operator-(const Point &other){
-		return Point(x-other.x, y-other.y);
+	Vector Vector::operator-(const Vector &other){
+		return Vector(x-other.x, y-other.y);
 	}
 
-	Point Point::operator+=(const Point &other){
+	Vector Vector::operator+=(const Vector &other){
 		*this = *this+other;
 		return *this;
 	}
 
-	Point Point::operator-=(const Point &other){
+	Vector Vector::operator-=(const Vector &other){
 		*this = *this-other;
 		return *this;
 	}
 
-	Point Point::operator*(const double &d){
-		return Point(x*d, y*d);
+	Vector Vector::operator*(const double &d){
+		return Vector(x*d, y*d);
 	}
 
-	Point Point::operator/(const double &d){
-		return Point(x/d, y/d);
+	Vector Vector::operator/(const double &d){
+		return Vector(x/d, y/d);
 	}
 
-	Point Point::operator*=(const double &d){
+	Vector Vector::operator*=(const double &d){
 		*this = *this*d;
 		return *this;
 	}
 
-	Point Point::operator/=(const double &d){
+	Vector Vector::operator/=(const double &d){
 		*this = *this/d;
 		return *this;
 	}
