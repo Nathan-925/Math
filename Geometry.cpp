@@ -20,6 +20,10 @@ namespace priori{
 		return Vector(x-other.x, y-other.y);
 	}
 
+	double Vector::operator*(const Vector &other){
+		return x*x + y*y;
+	}
+
 	Vector Vector::operator+=(const Vector &other){
 		*this = *this+other;
 		return *this;
@@ -47,5 +51,16 @@ namespace priori{
 		*this = *this/d;
 		return *this;
 	}
+
+	bool Vector::operator==(const Vector &other){
+		return x == other.x && y == other.y;
+	}
+
+	bool Vector::operator!=(const Vector &other){
+		return x != other.x && y != other.y;
+	}
+
+	Point::Point() : Vector() {};
+	Point::Point(double x, double y) : Vector(x, y) {};
 
 }

@@ -21,6 +21,8 @@ namespace priori{
 		Vector operator+(const Vector &other);
 		Vector operator-(const Vector &other);
 
+		double operator*(const Vector &other);
+
 		Vector operator+=(const Vector &other);
 		Vector operator-=(const Vector &other);
 
@@ -29,10 +31,14 @@ namespace priori{
 
 		Vector operator*=(const double &d);
 		Vector operator/=(const double &d);
+
+		bool operator==(const Vector &other);
+		bool operator!=(const Vector &other);
 	};
 
 	struct Point : public Vector{
-
+		Point();
+		Point(double x, double y);
 	};
 
 	typedef std::forward_list<Point> Polygon;
