@@ -31,6 +31,9 @@ namespace priori{
 
 		bool operator==(const Vector &other) const;
 		bool operator!=(const Vector &other) const;
+
+		double magnitude();
+		Vector normalize();
 	};
 
 	typedef std::forward_list<Vector> Polygon;

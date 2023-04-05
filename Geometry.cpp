@@ -4,7 +4,11 @@
  *  Created on: Jan 3, 2023
  *      Author: Nathan
  */
+#include <cmath>
+
 #include "Geometry.h"
+
+using namespace std;
 
 namespace priori{
 
@@ -21,7 +25,7 @@ namespace priori{
 	}
 
 	double Vector::operator*(const Vector &other) const{
-		return x*x + y*y;
+		return x*other.x + y*other.y;
 	}
 
 	Vector Vector::operator+=(const Vector &other){
@@ -62,6 +66,14 @@ namespace priori{
 
 	bool Vector::operator!=(const Vector &other) const{
 		return x != other.x && y != other.y;
+	}
+
+	double Vector::magnitude(){
+		return sqrt(x*x + y*y);
+	}
+
+	Vector Vector::normalize(){
+		return Vector(*this)/magnitude();
 	}
 
 }
