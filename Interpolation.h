@@ -9,19 +9,19 @@
 #define INTERPOLATION_H_
 
 #include <cmath>
-#include <forward_list>
+#include <vector>
 
 namespace priori{
 	template <class T>
-	std::forward_list<T> lerp(int i0, T d0, int i1, T d1){
-		std::forward_list<T> list;
+	std::vector<T> lerp(int i0, T d0, int i1, T d1){
+		std::vector<T> list;
 		T slope = (d1-d0)/(i1-i0);
-		T val = d1;
+		T val = d0;
 		for(int i = 0; i < std::abs(i1-i0); i++){
-			list.push_front(val);
-			val -= slope;
+			list.push_back(val);
+			val += slope;
 		}
-		list.push_front(d0);
+		list.push_back(d1);
 		return list;
 	}
 
