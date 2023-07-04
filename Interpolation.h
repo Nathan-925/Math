@@ -9,20 +9,47 @@
 #define INTERPOLATION_H_
 
 #include <cmath>
-#include <vector>
 
 namespace priori{
 	template <class T>
-	std::vector<T> lerp(int i0, T d0, int i1, T d1){
-		std::vector<T> list;
+	T* lerp(int i0, T d0, int i1, T d1, int length = 0, int offset = 0){
+		if(length == 0)
+			length = i1-i1+1;
+
+		T* out = new T[length];
 		T slope = (d1-d0)/(i1-i0);
 		T val = d0;
-		for(int i = 0; i < std::abs(i1-i0); i++){
-			list.push_back(val);
+		for(int i = 0; i < std::abs(offset); i++)
+			if(offset > 0)
+				val += slope;
+			else
+				val -= slope;
+
+		for(int i = 0; i < length; i++){
+			out[i] = val;
 			val += slope;
 		}
-		list.push_back(d1);
-		return list;
+		return out;
+	}
+
+	template <class T>
+	T* lerp(T* arr, int i0, T d0, int i1, T d1, int length = 0, int offset = 0){
+		if(length == 0)
+			length = i1-i1;
+
+		T slope = (d1-d0)/(i1-i0);
+		T val = d0;
+		for(int i = 0; i < std::abs(offset); i++)
+			if(offset > 0)
+				val += slope;
+			else
+				val -= slope;
+
+		for(int i = 0; i < std::abs(i1-i0); i++){
+			arr[i] = val;
+			val += slope;
+		}
+		return arr;
 	}
 
 	template <class T>
