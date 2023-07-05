@@ -14,7 +14,7 @@ namespace priori{
 	template <class T>
 	T* lerp(int i0, T d0, int i1, T d1, int length = 0, int offset = 0){
 		if(length == 0)
-			length = i1-i1+1;
+			length = i1-i0+1;
 
 		T* out = new T[length];
 		T slope = (d1-d0)/(i1-i0);
@@ -45,7 +45,7 @@ namespace priori{
 			else
 				val -= slope;
 
-		for(int i = 0; i < std::abs(i1-i0); i++){
+		for(int i = 0; i < length; i++){
 			arr[i] = val;
 			val += slope;
 		}
