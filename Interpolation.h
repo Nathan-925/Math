@@ -17,7 +17,7 @@ namespace priori{
 			length = i1-i0+1;
 
 		T* out = new T[length];
-		T slope = (d1-d0)/(i1-i0);
+		T slope = i0 == i1 ? d0-d0 : (d1-d0)/(i1-i0);
 		T val = d0;
 		for(int i = 0; i < std::abs(offset); i++)
 			if(offset > 0)
@@ -37,7 +37,7 @@ namespace priori{
 		if(length == 0)
 			length = i1-i1;
 
-		T slope = (d1-d0)/(i1-i0);
+		T slope = i0 == i1 ? d0-d0 : (d1-d0)/(i1-i0);
 		T val = d0;
 		for(int i = 0; i < std::abs(offset); i++)
 			if(offset > 0)
