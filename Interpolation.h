@@ -46,7 +46,7 @@ namespace priori{
 				val -= slope;
 
 		for(int i = 0; i < length; i++){
-			arr[i] = val;
+			arr[i+offset] = val;
 			val += slope;
 		}
 		return arr;
